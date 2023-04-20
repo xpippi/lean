@@ -5,20 +5,20 @@
 1. Clone this repo:
 
 	```bash
-	rm -rf package/helloworld
-	git clone --depth=1 https://github.com/xpippi/helloworld.git package/helloworld
+	rm -rf package/groundhello
+	git clone --depth=1 https://github.com/xpippi/groundhello.git package/groundhello
 	```
 
 2. Pull upstream commits:
 
 	```bash
-	git -C package/helloworld pull
+	git -C package/groundhello pull
 	```
 
 - Remove
 
   ```bash
-  rm -rf package/helloworld
+  rm -rf package/groundhello
   ```
 
 ### Method 2 - Add this repo as a git submodule
@@ -26,23 +26,23 @@
 1. Add new submodule:
 
 	```bash
-	rm -rf package/helloworld
-	git submodule add -f --name helloworld https://github.com/xpippi/helloworld.git package/helloworld
+	rm -rf package/groundhello
+	git submodule add -f --name groundhello https://github.com/xpippi/groundhello.git package/groundhello
 	```
 
 2. Pull upstream commits:
 
 	```bash
-	git submodule update --remote package/helloworld
+	git submodule update --remote package/groundhello
 	```
 
 - Remove
 
   ```bash
-  git submodule deinit -f package/helloworld
-  git rm -f package/helloworld
+  git submodule deinit -f package/groundhello
+  git rm -f package/groundhello
   git reset HEAD .gitmodules
-  rm -rf .git/modules{/,/package/}helloworld
+  rm -rf .git/modules{/,/package/}groundhello
   ```
 
 ### Method 3 - Add this repo as an OpenWrt feed
@@ -50,21 +50,21 @@
 1. Add new feed:
 
 	```bash
-	sed -i "/helloworld/d" "feeds.conf.default"
-	echo "src-git helloworld https://github.com/xpippi/helloworld.git" >> "feeds.conf.default"
+	sed -i "/groundhello/d" "feeds.conf.default"
+	echo "src-git groundhello https://github.com/xpippi/groundhello.git" >> "feeds.conf.default"
 	```
 
 2. Pull upstream commits:
 
 	```bash
-	./scripts/feeds update helloworld
-	./scripts/feeds install -a -f -p helloworld
+	./scripts/feeds update groundhello
+	./scripts/feeds install -a -f -p groundhello
 	```
 
 - Remove
 
   ```bash
-  sed -i "/helloworld/d" "feeds.conf.default"
+  sed -i "/groundhello/d" "feeds.conf.default"
   ./scripts/feeds clean
   ./scripts/feeds update -a
   ./scripts/feeds install -a
