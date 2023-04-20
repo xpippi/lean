@@ -6,7 +6,7 @@
 
 	```bash
 	rm -rf package/helloworld
-	git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
+	git clone --depth=1 https://github.com/xpippi/helloworld.git package/helloworld
 	```
 
 2. Pull upstream commits:
@@ -27,7 +27,7 @@
 
 	```bash
 	rm -rf package/helloworld
-	git submodule add -f --name helloworld https://github.com/fw876/helloworld.git package/helloworld
+	git submodule add -f --name helloworld https://github.com/xpippi/helloworld.git package/helloworld
 	```
 
 2. Pull upstream commits:
@@ -51,7 +51,7 @@
 
 	```bash
 	sed -i "/helloworld/d" "feeds.conf.default"
-	echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
+	echo "src-git helloworld https://github.com/xpippi/helloworld.git" >> "feeds.conf.default"
 	```
 
 2. Pull upstream commits:
